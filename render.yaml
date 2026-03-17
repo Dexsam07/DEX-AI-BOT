@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: dex-ai-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: HF_TOKEN
+        sync: false
+      - key: GIPHY_API_KEY
+        sync: false
+      - key: CUSTOM_API_URL
+        value: http://fi8.bot-hosting.net:20163/elos-gpt3
